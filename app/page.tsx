@@ -61,7 +61,8 @@ const [resultado, setResultado] = useState<Resultado | null>(null);
   return (
     <div className="p-6 max-w-xl mx-auto space-y-4">
       <h1 className="text-2xl font-bold">Calculadora de ICP - Signia Studios</h1>
-      <input placeholder="Nome da Empresa" className="w-full p-2 border" value={empresa} onChange={e => setEmpresa(Number(e.target.value))} />
+      <input placeholder="Nome da Empresa" className="w-full p-2 border" value={empresa} onChange={e => setEmpresa(e.target.value)}
+ />
       <input placeholder="Faturamento Anual (R$)" type="number" className="w-full p-2 border" value={faturamento} onChange={e => setFaturamento(Number(e.target.value))} />
       <input placeholder="Número de Funcionários" type="number" className="w-full p-2 border" value={colaboradores} onChange={e => setColaboradores(Number(e.target.value))} />
       <input placeholder="Time de Marketing" type="number" className="w-full p-2 border" value={timeMKT} onChange={e => setTimeMKT(Number(e.target.value))} />
