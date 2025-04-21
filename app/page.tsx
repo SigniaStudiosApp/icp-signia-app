@@ -67,7 +67,7 @@ const [resultado, setResultado] = useState<Resultado | null>(null);
       <input placeholder="Número de Funcionários" type="number" className="w-full p-2 border" value={colaboradores} onChange={e => setColaboradores(Number(e.target.value))} />
       <input placeholder="Time de Marketing" type="number" className="w-full p-2 border" value={timeMKT} onChange={e => setTimeMKT(Number(e.target.value))} />
       <input placeholder="Presença Digital (0 a 10)" type="number" className="w-full p-2 border" value={presencaDigital} onChange={e => setPresencaDigital(Number(e.target.value))} />
-      <select className="w-full p-2 border" value={perfilLead} onChange={e => setPerfilLead(Number(e.target.value))}>
+      <select className="w-full p-2 border" value={perfilLead} onChange={e => setPerfilLead(e.target.value)}>
         <option>Qualidade</option>
         <option>Exigente</option>
         <option>Preço</option>
