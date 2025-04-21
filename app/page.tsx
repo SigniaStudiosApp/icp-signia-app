@@ -15,7 +15,7 @@ export default function Page() {
     const receita = parseFloat(faturamento);
     const funcionarios = parseInt(colaboradores);
     const time = parseInt(timeMKT);
-    const presenca = parseFloat(presencaDigital);
+    const presenca = presencaDigital;
 
     const investimentoMKT = receita * 0.05;
     const potencialSignia = investimentoMKT * 0.005;
