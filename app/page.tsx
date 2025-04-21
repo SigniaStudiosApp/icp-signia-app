@@ -9,7 +9,17 @@ export default function Page() {
   const [timeMKT, setTimeMKT] = useState('');
   const [presencaDigital, setPresencaDigital] = useState(5);
   const [perfilLead, setPerfilLead] = useState('Qualidade');
-  const [resultado, setResultado] = useState(null);
+  type Resultado = {
+  investimentoMKT: number;
+  potencialSignia: number;
+  scoreMKT: number;
+  scoreCI: number;
+  scoreFinal: number;
+  classificacao: string;
+};
+
+const [resultado, setResultado] = useState<Resultado | null>(null);
+
 
   const calcular = () => {
     const receita = parseFloat(faturamento);
