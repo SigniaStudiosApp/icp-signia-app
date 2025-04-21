@@ -22,9 +22,9 @@ const [resultado, setResultado] = useState<Resultado | null>(null);
 
 
   const calcular = () => {
-    const receita = parseFloat(faturamento);
-    const funcionarios = parseInt(colaboradores);
-    const time = parseInt(timeMKT);
+    const receita = faturamento;
+    const funcionarios = colaboradores;
+    const time = timeMKT;
     const presenca = presencaDigital;
 
     const investimentoMKT = receita * 0.05;
