@@ -3,12 +3,12 @@
 import React, { useState } from 'react';
 
 export default function Page() {
-  const [empresa, setEmpresa] = useState('');
-  const [faturamento, setFaturamento] = useState('');
-  const [colaboradores, setColaboradores] = useState('');
-  const [timeMKT, setTimeMKT] = useState('');
-  const [presencaDigital, setPresencaDigital] = useState(5);
-  const [perfilLead, setPerfilLead] = useState('Qualidade');
+  const [faturamento, setFaturamento] = useState<number>(0);
+  const [colaboradores, setColaboradores] = useState<number>(0);
+  const [timeMKT, setTimeMKT] = useState<number>(0);
+  const [presencaDigital, setPresencaDigital] = useState<number>(5);
+  const [empresa, setEmpresa] = useState<string>("");
+  const [perfilLead, setPerfilLead] = useState<string>("Qualidade");
   type Resultado = {
   investimentoMKT: number;
   potencialSignia: number;
