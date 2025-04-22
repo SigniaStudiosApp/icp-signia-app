@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 
@@ -21,22 +20,17 @@ export default function Page() {
   const [resultado, setResultado] = useState<Resultado | null>(null);
 
   const calcular = () => {
-    const receita = faturamento;
-    const funcionarios = colaboradores;
-    const time = timeMKT;
-    const presenca = presencaDigital;
-
-    const investimentoMKT = receita * 0.05;
+    const investimentoMKT = faturamento * 0.05;
     const potencialSignia = investimentoMKT * 0.005;
 
-    const scoreMKT = Math.min(10, (investimentoMKT / 500000) * 10) + (time >= 3 ? 2 : 0) + (presenca || 0);
+    const scoreMKT = Math.min(10, (investimentoMKT / 500000) * 10) + (timeMKT >= 3 ? 2 : 0) + (presencaDigital || 0);
     const scoreCI = Math.min(10, (potencialSignia / 300000) * 10) + scoreMKT * 0.3;
     const scoreFinal = Math.round((scoreMKT * 0.4 + scoreCI * 0.6) * 10) / 10;
 
     let classificacao = 'Lead em análise';
-    if (receita >= 5_000_000_000 && funcionarios >= 3500 && potencialSignia >= 600000) {
+    if (faturamento >= 5_000_000_000 && colaboradores >= 3500 && potencialSignia >= 600000) {
       classificacao = 'ICP Master';
-    } else if (receita >= 3_000_000_000 && funcionarios >= 1000 && potencialSignia >= 200000) {
+    } else if (faturamento >= 3_000_000_000 && colaboradores >= 1000 && potencialSignia >= 200000) {
       classificacao = 'ICP Mínimo';
     } else if (scoreFinal >= 7) {
       classificacao = 'Lead promissor';
@@ -67,24 +61,4 @@ export default function Page() {
           value={perfilLead} onChange={e => setPerfilLead(e.target.value)}>
           <option>Qualidade</option>
           <option>Exigente</option>
-          <option>Preço</option>
-        </select>
-        <button onClick={calcular} className="w-full bg-[#2a84d1] hover:bg-[#1b5fa0] text-white font-semibold py-2 rounded transition">
-          Calcular Score
-        </button>
-      </div>
-
-      {resultado && (
-        <div className="mt-6 p-4 bg-[#222] rounded text-sm space-y-2 border border-[#444]">
-          <p><strong>Empresa:</strong> {empresa}</p>
-          <p><strong>Investimento em Marketing:</strong> R$ {resultado.investimentoMKT.toLocaleString()}</p>
-          <p><strong>Potencial p/ Signia:</strong> R$ {resultado.potencialSignia.toLocaleString()}</p>
-          <p><strong>Score Marketing:</strong> {resultado.scoreMKT.toFixed(1)}</p>
-          <p><strong>Score Capacidade Investimento:</strong> {resultado.scoreCI.toFixed(1)}</p>
-          <p><strong>Score Final:</strong> {resultado.scoreFinal.toFixed(1)}</p>
-          <p className="text-lg mt-2"><strong>Classificação:</strong> <span className="text-[#71C9A2]">{resultado.classificacao}</span></p>
-        </div>
-      )}
-    </div>
-  );
-}
+          <
