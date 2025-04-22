@@ -1,2 +1,2 @@
-# ICP Signia App
-Aplicativo React para cálculo de ICP com lógica Signia Studios.
+# Calculadora de ICP - Signia Studios
+Versão com visual refinado e identidade de marca aplicada.
