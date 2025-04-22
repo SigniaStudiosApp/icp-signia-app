@@ -61,4 +61,25 @@ export default function Page() {
           value={perfilLead} onChange={e => setPerfilLead(e.target.value)}>
           <option>Qualidade</option>
           <option>Exigente</option>
-          <
+          <option>Preço</option>
+        </select>
+        <button onClick={calcular} className="w-full bg-[#2a84d1] hover:bg-[#1b5fa0] text-white font-semibold py-2 rounded transition">
+          Calcular Score
+        </button>
+      </div>
+
+      {resultado && (
+        <div className="mt-6 p-4 bg-[#222] rounded text-sm space-y-2 border border-[#444]">
+          <p><strong>Empresa:</strong> {empresa}</p>
+          <p><strong>Investimento em Marketing:</strong> R$ {resultado.investimentoMKT.toLocaleString()}</p>
+          <p><strong>Potencial p/ Signia:</strong> R$ {resultado.potencialSignia.toLocaleString()}</p>
+          <p><strong>Score Marketing:</strong> {resultado.scoreMKT.toFixed(1)}</p>
+          <p><strong>Score Capacidade Investimento:</strong> {resultado.scoreCI.toFixed(1)}</p>
+          <p><strong>Score Final:</strong> {resultado.scoreFinal.toFixed(1)}</p>
+          <p className="text-lg mt-2"><strong>Classificação:</strong> <span className="text-[#71C9A2]">{resultado.classificacao}</span></p>
+        </div>
+      )}
+    </div>
+  );
+}
+
