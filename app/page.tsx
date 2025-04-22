@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 
@@ -22,7 +23,6 @@ export default function Page() {
   const calcular = () => {
     const investimentoMKT = faturamento * 0.05;
     const potencialSignia = investimentoMKT * 0.005;
-
     const scoreMKT = Math.min(10, (investimentoMKT / 500000) * 10) + (timeMKT >= 3 ? 2 : 0) + (presencaDigital || 0);
     const scoreCI = Math.min(10, (potencialSignia / 300000) * 10) + scoreMKT * 0.3;
     const scoreFinal = Math.round((scoreMKT * 0.4 + scoreCI * 0.6) * 10) / 10;
@@ -82,4 +82,3 @@ export default function Page() {
     </div>
   );
 }
-
