@@ -12,6 +12,9 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16",
     "typescript": "^5.3.3",
     "@types/react": "^18.2.14",
     "@types/node": "^20.6.2"
